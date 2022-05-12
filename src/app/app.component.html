@@ -1,0 +1,12 @@
+<!-- <app-show-counter></app-show-counter>
+<app-edit-counter></app-edit-counter> -->
+<!-- <app-shop></app-shop> -->
+<!-- <app-show-api></app-show-api> -->
+<!-- <app-joke-container></app-joke-container> -->
+<nav mat-tab-nav-bar [backgroundColor]="myColor">
+  <a mat-tab-link *ngFor="let link of links; index as i"
+  [routerLink]="link" (click)="activeLink = link"
+    [active]="activeLink == link"> {{titles[i]}} </a>
+</nav>
+<router-outlet></router-outlet>
+

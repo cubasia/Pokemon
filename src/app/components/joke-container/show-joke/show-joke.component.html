@@ -1,0 +1,47 @@
+  <mat-card class="example-card">
+      <mat-card-header *ngIf="i==0">
+        <mat-card-title class="content"> I like them</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="content">
+      <ng-container *ngIf="likeJoke.type == 'twopart'">
+        <table>
+          <tr>
+            <td rowspan="2" class="content-ava">
+              <span class="content-spa">{{ i + 1 }}</span>
+            </td>
+            <td>
+              {{ likeJoke.setup }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {{ likeJoke.delivery }}
+            </td>
+          </tr>
+        </table>
+      </ng-container>
+      <ng-container *ngIf="likeJoke.type == 'single'">
+        <table>
+          <tr>
+            <td rowspan="2" class="content-ava">
+              <span class="content-spa">{{ i + 1 }}</span>
+            </td>
+            <td>
+              {{ likeJoke.joke }}
+            </td>
+          </tr>
+        </table>
+      </ng-container>
+    </mat-card-content>
+    <mat-card-actions class="content-c">
+      <div class="divButtonLike">
+        <button mat-raised-button class="buttonPink" (click)="muovi(likeJoke)">
+          Dislike
+        </button>
+        <button mat-raised-button class="buttonPink" (click)="cancella(likeJoke)">
+          Delete
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+

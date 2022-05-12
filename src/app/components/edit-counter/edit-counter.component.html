@@ -1,0 +1,17 @@
+
+  <label for="valore">Increase/Decrease </label>
+  <input #valore type="number" min="1" required id="valore" [value]="1" (change)="check()">
+  <button (click)="add()">ADD</button>
+  <button (click)="sub()">SUB</button>
+
+  <div *ngIf="errore">
+       <h1>Value not allowed</h1>
+  </div>
+  <div *ngIf="errore2">
+    <h1>{{errorMsg}}</h1>
+  </div>
+<div>
+  <h2>My Counter value is : <span>{{counter | async}}</span></h2>
+</div>
+
+

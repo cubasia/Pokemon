@@ -1,0 +1,78 @@
+<div class="all">
+  <div class="testo">
+    <h1> Benvenuto nel mondo Pokemon</h1>
+    <h2>Clicca una volta sul Poke per vedere i dettagli, due volte per rimuoverlo dalla lista</h2>
+  </div>
+<div class="container">
+  <div class="refused">
+    <h2 >Pokemon rifiutati:</h2>
+    <ng-container *ngFor="let item of rifiutati">
+      <div class="rifiutati" (dblclick)="cancellaRifiutati(item)"  (click)="showMe(item,rifiutato)">
+        <div class="rifiutati-detail">
+          <div>
+              <img [src]="item.sprites?.other?.home?.front_default">
+              <h4>#{{item.id}} {{item.name}}</h4>
+          </div>
+          <div >
+            <ng-container *ngFor="let tipo of item.types">
+              <div class="rifiutati-tipi"><h5 >{{tipo.type.name}}</h5></div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+  </div>
+  <div class="select" *ngIf="poke;">
+    <div class="name" >
+      <h3  >{{poke.name}}</h3>
+    </div>
+    <div class="container-poke">
+      <div class="detail">
+        <h3 >Dettagli</h3>
+        <table >
+          <tr>
+            <td> ID:</td>
+            <td>{{poke.id}}</td>
+          </tr>
+          <tr>
+            <td>Name:</td>
+            <td>{{poke.name}}</td>
+          </tr>
+          <tr>
+            <td> Weight:</td>
+            <td>{{poke.weight}}</td>
+          </tr>
+          <tr>
+            <td> Height:</td>
+            <td>{{poke.height}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="detail-img" (click)="showMe(poke,selezionato)" >
+        <img [src]="poke.sprites?.other?.home?.front_default">
+      </div>
+    </div>
+    <div class="Action">
+      <button mat-flat-button class="mat-flat-button" (click)="catturaPoke(poke)">Cattura</button>
+      <button mat-flat-button class="mat-flat-button" (click)="rifiutaPoke(poke)">Rifiuta</button>
+    </div>
+    <div class="footer">
+      <h3>è apparso un {{poke.name}} !</h3>
+    </div>
+  </div>
+  <!-- end select class -->
+  <div class="accepted" >
+    <ng-container *ngFor="let item of catturati">
+      <div class="elemento" (dblclick)="cancellaCatturati(item)" (click)="showMe(item,catturato)">
+        <img [src]="item.sprites?.other?.home?.front_default" [alt]="item.name" style="width: 100%;">
+      </div>
+    </ng-container>
+    <ng-container *ngFor="let x of  [].constructor(6-catturati.length);let i =index">
+      <div class="elemento">
+
+      </div>
+    </ng-container>
+  </div>
+</div>
+</div>

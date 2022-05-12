@@ -1,0 +1,48 @@
+<div class="container">
+  <h1>Joke App</h1>
+  <div class="divButtonStop">
+    <button #pause id="stop" mat-raised-button class="buttonStop" [disabled]="isOn" (click)="OnOff(false)">Stop</button>
+    <button #resume mat-raised-button class="buttonGo" [disabled]="! isOn" (click)="OnOff(true)">Resume</button>
+  </div>
+  <mat-card class="example-card" *ngIf="jokeObservale | async as joke">
+
+    <mat-card-header>
+
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title class="content">Current Joke</mat-card-title>
+      <mat-card-subtitle class="content">Enjoy</mat-card-subtitle>
+
+      <div style="margin-left:auto">
+        <ng-container *ngIf="stoppable">
+          <h3 class="content buttonGreen"> Up & Running every 5 seconds</h3>
+        </ng-container>
+        <ng-container *ngIf="!stoppable">
+          <h3 class="content buttonStop"> Stopped ! Click to resume in 5 secs.</h3>
+        </ng-container>
+      </div>
+
+    </mat-card-header>
+    <mat-card-content class="content" >
+      <ng-container *ngIf="joke.type=='twopart'">
+        {{joke.setup}}
+        <br>
+        {{joke.delivery}}
+      </ng-container>
+      <ng-container *ngIf="joke.type=='single'">
+        {{joke.joke}}
+      </ng-container>
+    </mat-card-content>
+    <mat-card-actions class="content-c" >
+      <div class="divButtonLike" >
+        <button mat-raised-button class="buttonGreen" (click)="addLike(joke)">Like</button>
+        <button mat-raised-button class="buttonPink" (click)="addDislike(joke)">Dislike</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+<div class=""showJoke>
+  <app-show-joke [likeJoke]="likeJoke" [i]="i" *ngFor="let likeJoke of joeLikeArray ;let i = index" (movLike)="movLike($event)" (delLike)="delLike($event)"></app-show-joke>
+</div>
+<div class="" showJoke>
+  <app-show-jokedislike [dislikeJoke]="dislikeJoke" [i]="i" *ngFor="let dislikeJoke of joeDislikeArray ;let i = index" (delDislike)="delDislike($event)" (movDislike)="movDislike($event)"></app-show-jokedislike>
+</div>
+</div>

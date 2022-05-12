@@ -1,0 +1,37 @@
+
+.container
+{
+ background-image: url(../../../assets/foto/pokemon.jpg);
+ display: flex;
+  justify-content: space-evenly;
+  height: 100vh;
+  width:100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  align-items: center;
+
+}
+.pokelist  {
+  width:45%;
+  height:80%;
+  background-color:red;
+}
+.pokedetail {
+  width:45%;
+  height:80%;
+  background-color:red;
+}
+.pokedetail-bg-red{
+    background-color:red;
+}
+.pokedetail-bg-green{
+    background-color:green
+}
+.pokedetail-bg-purple{
+    background-color:purple
+}

@@ -1,0 +1,31 @@
+<div class="mat-elevation-z8 table" >
+<mat-table [dataSource]="datasource"  >
+  <th mat-header-cell *matHeaderCellDef>
+  </th>
+  <ng-container matColumnDef="Index">
+    <mat-header-cell *matHeaderCellDef > Prg</mat-header-cell>
+    <mat-cell *matCellDef="let i=index" class="numero">{{(i+1)+ (paginator.pageIndex * paginator.pageSize)}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="NomeApi">
+    <mat-header-cell *matHeaderCellDef > API </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.NomeApi}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Name">
+    <mat-header-cell *matHeaderCellDef > Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Payload.Name}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Description">
+    <mat-header-cell *matHeaderCellDef > Description </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Payload.Description}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Path">
+    <mat-header-cell *matHeaderCellDef > Path </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Payload.Path}} </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns "></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" ></mat-row>
+
+</mat-table>
+<mat-paginator  #paginator [pageSizeOptions]="[7,14,21]" [length]="Tabledatasource.length"
+  showFirstLastButtons></mat-paginator>
+</div>

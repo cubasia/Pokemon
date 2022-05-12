@@ -1,0 +1,55 @@
+<!-- <div *ngIf="pokemon" style="padding:30px;height: 20%;border: solid 1 blue;margin:0">
+  <h1 style="text-align: center">#{{pokemon?.id}} {{pokemon?.name}}</h1>
+</div> -->
+<div class="all" *ngIf="pokemon">
+  <div class="testo">
+    <h1> # {{pokemon.id}} {{pokemon.name}}</h1>
+  </div>
+  <div class="container">
+    <div class="contain-img">
+      <div class="detail-img">
+        <img [src]="pokemon.sprites?.other?.home?.front_default">
+        <div>
+          <div class="tipo">
+            <h3 *ngFor="let tipo of pokemon.types">{{tipo.type.name}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="detail-sta">
+      <div class="detail-sta-title">
+        <h3>Stastistiche</h3>
+      </div>
+      <div class="detail-sta-list">
+        <table>
+          <ng-container *ngFor="let stato of pokemon.stats">
+            <tr>
+              <td>
+                <h3>{{stato.stat.name}}</h3>
+              </td>
+              <td>
+                <h3>{{stato.base_stat}}</h3>
+              </td>
+            </tr>
+          </ng-container>
+        </table>
+      </div>
+    </div>
+    <div class="detail-mosse">
+      <div class="detail-mosse-sta">
+        <h3>Mosse</h3>
+      </div>
+      <div class="detail-mosse-list">
+        <table>
+          <ng-container *ngFor="let mossa of pokemon.moves">
+            <tr>
+              <td>
+                <h3>{{mossa.move.name}}</h3>
+              </td>
+            </tr>
+          </ng-container>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.table {
+  margin-top: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.numero{
+  color:red;
+
+}
+mat-cell,
+.mat-cell,
+mat-footer-cell,
+.mat-footer-cell,
+mat-header-cell, .mat-header-cell {
+  padding: 0.75rem !important;
+}
+.pagina {
+  width: 80% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

@@ -1,0 +1,36 @@
+<div class="column small-12 large-2">
+<label for="Name" >Nome</label>
+<select id="Name" [formControl]="selectBeerName" (change)="selectName = false">
+  <option *ngFor="let birra of birre |async"
+    [value]="birra.name" >
+  {{birra.name}}
+</option>
+</select >
+
+<label for="tipo">Tipo</label>
+<select id="tipo" [formControl]="selectBeerType" (change)="selectType = false">
+  <option *ngFor="let tipo of beertype" [value]="tipo">
+    {{tipo}}
+  </option>
+</select>
+<div>
+
+<button (click)="Search()" [disabled]="selectName ==true || selectType==true">Search</button>
+<button (click)="Reset()">Reset</button>
+</div>
+</div>
+<div *ngIf="result">
+<mat-card class="example-card" *ngFor="let birra of birreresult" >
+  <mat-card-title-group>
+    <mat-card-title>{{birra.name}}</mat-card-title>
+    <mat-card-subtitle>{{birra.type}}</mat-card-subtitle>
+    <img mat-card-md-image src="../../../assets/foto/birre.jpeg">
+  </mat-card-title-group>
+  <mat-card-content>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, atque iste ex voluptas numquam, voluptatibus ipsam nostrum aliquam officiis non hic ipsum, ut suscipit delectus?
+  </mat-card-content>
+</mat-card>
+<div *ngIf="birreresult.length==0">
+<h1>NO Results Found</h1>
+</div>
+</div>

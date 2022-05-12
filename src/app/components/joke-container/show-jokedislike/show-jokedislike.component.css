@@ -1,0 +1,96 @@
+/* .container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+  padding: 10px;
+} */
+
+h1 {
+  color: white;
+  padding: 50px;
+  text-align: center;
+  font-size: 50px;
+}
+
+.example-card {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: red;
+  /* margin-bottom: 20px; */
+  border-radius: 20px;
+  margin-top:3px;
+}
+
+.content {
+  color: black
+}
+
+.content-ava {
+  background-color: white;
+  border-radius: 50%;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  /* font-size: 14px; */
+  /* display: inline-block;
+  box-sizing: border-box; */
+  /* margin:auto; */
+  /* margin-top:auto; */
+}
+
+.content-spa {
+  margin: auto;
+  font-size: 24px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+button {
+  border-radius: 20px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.buttonGreen {
+  background-color: greenyellow;
+}
+
+.buttonPink {
+  background-color: pink;
+}
+
+.buttonStop {
+  background-color: red
+}
+
+.buttonGo {
+  background-color: green
+}
+
+.content-c {
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.divButtonLike {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.divButtonStop {
+  width: 80%;
+  display: flex;
+  align-items: flex-end
+}
+
+#stop {
+  margin-left: auto
+}
